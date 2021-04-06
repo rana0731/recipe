@@ -1,9 +1,3 @@
-const arr=[23, 44, 12];
+import query from './model/Search';
 
-let myfunc = a => {
-    console.log(`too : ${a}`);
-}
-
-const arr2 = [...arr, 44, 1223];
-
-myfunc(arr2[1]);
+console.log("Хайлт :" + query);
