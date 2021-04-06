@@ -1,5 +1,19 @@
-import query from './model/Search';
-import add from './view/searchView';
+require('@babel/polyfill');
+import axios from 'axios';
 
-console.log("Хайлт :" + query);
-console.log('Хоёр тооны нийбэр :' + add(4, 6));
+async function doSearch(search) {
+    try{
+        let result = await axios('https://forkify-api.herokuapp.com/api/search?q=' + search);
+        const recipes = result.data.recipes;
+        console.log(recipes);
+
+        result = await axios('https://forkify-api.herokuapp.com/api/search?q=' + recipes[1].recipe_id);
+        console.log(result);
+    }catch(error){
+        alert('Асуудал гарлаа: ' + error);
+
+    }
+    
+}
+
+doSearch('pizza');
