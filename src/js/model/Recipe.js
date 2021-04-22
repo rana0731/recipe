@@ -18,4 +18,13 @@ export default class Recipe {
         console.log(this.title);
         console.log(this.ingredients);
     }
+
+    calcTime() {
+        //  Найрлага бүрт ойролцоогоор 5 минут зарцуулна.
+        this.time = this.ingredients.length * 5;
+    }
+
+    calcHuniiToo() {
+        this.huniiToo = 4;
+    }
 }
